@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPlan</title>
+</head>
+<style>
+    table{
+        border:1px solid black;
+        width:80%;
+    }
+    tr{
+        text-align: center;
+    }
+    table th {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-collapse: collapse;
+}
+
+    table th:first-child {
+        border-left: none;
+    }
+
+    table th:last-child {
+        border-right: none;
+    }
+</style>
+<body>
+    <center><h1>MyPlan</h1></center>
+    <img src="https://www.educationalappstore.com/blog/wp-content/uploads/2018/08/best-to-do-list-apps-for-task-management.jpg" alt="" srcset="">
+    <p><a href="./description.html">Посилання на опис</a> </p>
+    <p>Схематичний вигляд дошки</p>
+    <table>
+       <tr>
+        <th>Список 1</th>
+        <th>Список 2</th>
+        <th>Список 3</th>
+       </tr> 
+       <tr>
+        <td>Task 1</td>
+        <td>Task 1</td>
+        <td>Task 1</td>
+       </tr>
+       <tr>
+        <td>Task 2</td>
+        <td>Task 2</td>
+        <td>Task 2</td>
+       </tr>
+       <tr>
+        <td>Task 3</td>
+        <td>Task 3</td>
+        <td>Task 3</td>
+       </tr>
+       <tr>
+        <td>Task 4</td>
+        <td></td>
+       </tr>
+    </table>
+    <p>Схематичний вигляд списками</p>
+    <div style="display:flex;width:80%;gap:20px">
+        <div>
+            <p>List 1</p>
+            <ul>
+                <li>Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+                <li>Task 4</li>
+            </ul>
+        </div>
+        <div>
+            <p>List 2</p>
+            <ul>
+                <li>Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+                <li>Task 4</li>
+            </ul>
+        </div>
+    </div>
+    <h2>Підписатися на розсилку</h2>
+    <form>
+        <label for="fname">Ім'я:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Прізвище:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br>
+        <label for="lname">Пошта</label><br>
+        <input type="email" id="lname" name="lname" value=""><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

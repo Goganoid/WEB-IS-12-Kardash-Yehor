@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./report.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/androidstudio.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Report</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Звіти з лабораторних робіт з дисципліни "Інтернет-технології та проєктування web-застосувань"</h1>
+        <div class='info'>
+            <div class='name'>Студент групи ІС-12 Кардаш Єгор</div>
+            <div class="img-container"><img src="./photo.jpg" alt=""></div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="selector">
+            <label for="reports">Оберіть лабораторну:</label>
+            <select name="reports" class="reports-select">
+                <option value="1">Лабораторна 1</option>
+                <option value="2">Лабораторна 2</option>
+                <option value="3">Лабораторна 3</option>
+                <option value="4">Лабораторна 4</option>
+                <option value="5">Лабораторна 5</option>
+                <option value="6">Лабораторна 6</option>
+                <option value="7">Лабораторна 7</option>
+                <option value="8">Лабораторна 8</option>
+                <option value="9">Лабораторна 9</option>
+            </select>
+        </div>
+        <div class="report-container">
+            <div class="report-contents">
+                <ol>
+                    <li><a href="#1">Опис предметного середовища</a></li>
+                    <li><a href="#2">
+                            Тема, мета, місце розташування WEB-застосунка та місце звітного
+                            HTML-документу
+                        </a>
+                    </li>
+                    <li><a href="#3">
+                            Структура головної сторінки WEB-застосунка, яка містить HTML-
+                            код таблиці, зображення, списків, посилань
+                        </a>
+                    </li>
+                    <li><a href="#4">Структура документа</a>
+                        <ol>
+                            <li><a href="#41">Таблиці</a></li>
+                            <li><a href="#42">Форми</a></li>
+                            <li><a href="#43">Зображення</a></li>
+                        </ol>
+                    </li>
+
+                    <li><a href="#5">Висновки</a></li>
+                </ol>
+            </div>
+            <div class="report">
+                <h1 id="1">Опис предметного середовища</h1>
+                <p>Предметне середовище: IT кампанія. Кампанія має багато працівників і проєктів, якими треба ефективно керувати.</p>
+                <h1 id="2">Тема, мета, місце розташування WEB-застосунка та місце звітного
+                    HTML-документу</h1>
+                <p>Мета:придбати практичні навички роботи з HTML-документом, таблицями,
+                    зображеннями, посиланнями, списками, формами
+                    Створити шаблон звітного HTML-документом для відображення
+                    результатів роботи всіх лабораторних робіт.</p>
+                <p>Тема:Багатоплатформна система управління
+                    проєктами у парадигмі канбан</p>
+                <p>Розташування: report.html(ви тут) - звітний документ; description.html - опис проєкту; website.html - проєкт</p>
+                <h1 id="3"> Структура головної сторінки WEB-застосунка, яка містить HTML-
+                    код таблиці, зображення, списків, посилань</h1>
+                <pre><code class="language-html">
+                    <style>
+                        table{
+                            border:1px solid black;
+                            width:80%;
+                        }
+                        tr{
+                            text-align: center;
+                        }
+                        table th {
+                        border-left: 1px solid #000;
+                        border-right: 1px solid #000;
+                        border-collapse: collapse;
+                    }
+                    
+                        table th:first-child {
+                            border-left: none;
+                        }
+                    
+                        table th:last-child {
+                            border-right: none;
+                        }
+                    </style>
+                    <body>
+                        <center><h1>MyPlan</h1></center>
+                        <img src="https://www.educationalappstore.com/blog/wp-content/uploads/2018/08/best-to-do-list-apps-for-task-management.jpg" alt="" srcset="">
+                        <p><a href="./description.html">Посилання на опис</a> </p>
+                        <p>Схематичний вигляд дошки</p>
+                        <table>
+                           <tr>
+                            <th>Список 1</th>
+                            <th>Список 2</th>
+                            <th>Список 3</th>
+                           </tr> 
+                           <tr>
+                            <td>Task 1</td>
+                            <td>Task 1</td>
+                            <td>Task 1</td>
+                           </tr>
+                           <tr>
+                            <td>Task 2</td>
+                            <td>Task 2</td>
+                            <td>Task 2</td>
+                           </tr>
+                           <tr>
+                            <td>Task 3</td>
+                            <td>Task 3</td>
+                            <td>Task 3</td>
+                           </tr>
+                           <tr>
+                            <td>Task 4</td>
+                            <td></td>
+                           </tr>
+                        </table>
+                        <p>Схематичний вигляд списками</p>
+                        <div style="display:flex;width:80%;gap:20px">
+                            <div>
+                                <p>List 1</p>
+                                <ul>
+                                    <li>Task 1</li>
+                                    <li>Task 2</li>
+                                    <li>Task 3</li>
+                                    <li>Task 4</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p>List 2</p>
+                                <ul>
+                                    <li>Task 1</li>
+                                    <li>Task 2</li>
+                                    <li>Task 3</li>
+                                    <li>Task 4</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h2>Підписатися на розсилку</h2>
+                        <form>
+                            <label for="fname">Ім'я:</label><br>
+                            <input type="text" id="fname" name="fname" value="John"><br>
+                            <label for="lname">Прізвище:</label><br>
+                            <input type="text" id="lname" name="lname" value="Doe"><br>
+                            <label for="lname">Пошта</label><br>
+                            <input type="email" id="lname" name="lname" value=""><br>
+                            <input type="submit" value="Submit">
+                          </form>
+                    </body>
+                </code>
+                </pre>
+                <iframe src="./website.html" frameborder="0"></iframe>
+                <h1 id="4">Структура документа</h1>
+                <h2 id="41">Таблиці</h2>
+                <pre>
+                    Використовуйте HTML елемент table для визначення таблиці
+                    Використовуйте HTML елемент tr для визначення рядка таблиці
+                    Використовуйте HTML елемент td для визначення чарунки таблиці
+                    Використовуйте HTML елемент th для визначення заголовка таблиці
+                    Використовуйте HTML елемент caption для визначення підпису таблиці
+                    Використовуйте атрибут colspan, щоб чарунка охоплювала багато стовпців
+                    Використовуйте атрибут rowspan, щоб чарунка охоплювала багато рядків
+                    Використовуйте атрибут id для однозначного визначення однієї таблиці
+                </pre>
+                <pre><code>
+                    <table style="width:100%">
+                        <tr>
+                          <th>Firstname</th>
+                          <th style="width:70%;height:200px">Lastname</th>
+                          <th>Age</th>
+                          <th colspan="2">Multi span</th>
+                        </tr>
+                        <tr>
+                          <td>Jill</td>
+                          <td>Smith</td>
+                          <td>50</td>
+                          <td>1</td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td>Eve</td>
+                          <td>Jackson</td>
+                          <td>94</td>
+                          <td>1</td>
+                          <td>1</td>
+                        </tr>
+                      </table> 
+                </code></pre>
+                <table style="width:100%; background-color: #282b2e;">
+                <style>
+                    tr,td,th{border: 1px solid white;border-collapse: collapse;}
+                </style>
+                    <tr>
+                      <th>Firstname</th>
+                      <th style="width:70%;height:200px">Lastname</th>
+                      <th>Age</th>
+                      <th colspan="2">Multi span</th>
+                    </tr>
+                    <tr>
+                      <td>Jill</td>
+                      <td>Smith</td>
+                      <td>50</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                      <td>94</td>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                  </table> 
+                <h2 id="42">Форми</h2>
+                <pre><code> <form>
+                    <label for="fname">Ім'я:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                    <label for="lname">Прізвище:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br>
+                    <label for="lname">Пошта</label><br>
+                    <input type="email" id="lname" name="lname" value=""><br>
+                    <input type="submit" value="Submit">
+                </form></code></pre>
+                <form id="form-example">
+                    <label for="fname">Ім'я:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                    <label for="lname">Прізвище:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br>
+                    <label for="lname">Пошта</label><br>
+                    <input type="email" id="lname" name="lname" value=""><br>
+                    <input type="submit" value="Submit" style="background-color: var(--magenta-haze)">
+                </form>
+                <h2 id="43">Зображення</h2>
+                <p>src-шлях до зображення; alt-текст, на випадок, якщо зображення не завантажиться; width,height - розміри зображення</p>
+                <p><pre><code><img src="photo.jpg" alt="Cat"></code></pre></p>
+                <img src="photo.jpg" alt="Cat" height="100px" width="100px">
+                <h1 id="5">Висновки</h1>
+                <p>
+                    Придбав практичні навички роботи з HTML-документом, таблицями,
+                    зображеннями, посиланнями, списками, формами
+                    Створив шаблон звітного HTML-документом для відображення
+                    результатів роботи всіх лабораторних робіт.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+   
+
+    <script>
+    document.querySelectorAll("code").forEach(function(element) {
+    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    });
+    hljs.highlightAll();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+:root{
+    --rich-black-fogra-39: #0c0c0fff;
+
+    --rich-black-fogra-39-2: #101014ff;
+    
+    --white: #ffffffff;
+    
+    --independence: #475977ff;
+    
+    --magenta-haze: #963d72ff;
+    
+    --sap-green: #537a34ff;
+    
+}
+html{scroll-behavior:smooth}
+*{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--rich-black-fogra-39-2);
+}
+h1{
+    text-align: center;
+    font-size: 24px;
+}
+button{
+    background-color: var(--magenta-haze);
+}
+.header{
+    height: 18vh;
+}
+.content{
+    height: 65vh;
+}
+
+
+.info{
+    display:grid;
+    grid-template-columns: 60% 40%;
+    width:80%; 
+    padding: 0 10%;
+    grid-auto-rows: 150px;
+}
+.name{
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.img-container{
+    height: 100%;
+    text-align: right;
+   
+}
+.img-container > img{
+    height: 100%;
+    border-radius: 30px;
+}
+
+.content{
+    padding: 0 2.5%;
+    width:95%;
+}
+
+.reports-select{
+    background-color: var(--magenta-haze);
+    border-radius: 30px;
+}
+.report-contents{
+    font-size: 15px;
+}
+.report-contents a{
+    color:var(--sap-green);
+    text-decoration: none;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+.report-contents a:hover{
+    text-decoration: underline;
+}
+.report-contents>ol>li{
+    padding-bottom: 15px;
+}
+.report-container{
+    margin-top: 40px;
+    display:grid;
+    grid-template-columns: 15% 85%;
+    gap: 40px ;
+    height: 100%;
+    width: 100%;
+}
+.report{
+    border: 1px solid var(--sap-green);
+    border-radius: 30px;
+    padding: 40px;
+    overflow-y: scroll;
+    height: 100%;
+    width: calc(100%-80px);
+}
+iframe{
+    width:100%;
+    background-color: white;
+    height: 100%;
+}
+#form-example input{
+    background-color: #282b2e;
+}
