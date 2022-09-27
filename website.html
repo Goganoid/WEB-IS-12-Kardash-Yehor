@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./website.css">
     <title>MyPlan</title>
 </head>
 <style>
-    table{
-        border:1px solid black;
-        width:80%;
-    }
-    tr{
-        text-align: center;
-    }
-    table th {
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-collapse: collapse;
-}
-
-    table th:first-child {
-        border-left: none;
-    }
-
-    table th:last-child {
-        border-right: none;
-    }
+   
 </style>
 <body>
+
+    <div id="header">
+        <div class="header-text">
+            MyPlan
+        </div>
+    </div>
+    <div id="intro">
+        <div class="intro-container">
+            <h2>MyPlan boosts your productivity</h2>
+            <p>Collaborate, manage projects, and reach new productivity peaks.</p>
+            <ul>
+                <li>Fast</li>
+                <li>Feature rich</li>
+                <li>Easy to use</li>
+                <li>Totally free</li>
+            </ul>
+    
+        </div>
+        <div class="intro-container">
+            <div class="cube">
+                <div class="face cube-top"></div>
+                <div class="face cube-bottom"></div>
+                <div class="face cube-left"></div>
+                <div class="face cube-right"></div>
+                <div class="face cube-front"></div>
+                <div class="face cube-back"></div>
+              </div>
+        </div>
+
+    </div>
+
+
+
+
+
     <center><h1>MyPlan</h1></center>
     <img src="https://www.educationalappstore.com/blog/wp-content/uploads/2018/08/best-to-do-list-apps-for-task-management.jpg" alt="" srcset="">
     <p><a href="./description.html">Посилання на опис</a> </p>
@@ -60,7 +80,7 @@
        </tr>
     </table>
     <p>Схематичний вигляд списками</p>
-    <div style="display:flex;width:80%;gap:20px">
+    <div class="table-list">
         <div>
             <p>List 1</p>
             <ul>

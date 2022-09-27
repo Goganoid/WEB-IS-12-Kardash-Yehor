@@ -110,3 +110,7 @@ iframe{
 #form-example input{
     background-color: #282b2e;
 }
+
+.disabled{
+    display:none
+}
