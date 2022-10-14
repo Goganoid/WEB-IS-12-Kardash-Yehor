@@ -1,0 +1,123 @@
+:root {
+    --main-accent: #ffbd59;
+}
+html{
+    font-size:16px;
+    font-family: 'Roboto', sans-serif;
+}
+#header h1{
+    font-size: 3rem;
+}
+#header h1, li{
+    background-color: var(--main-accent);
+}
+
+.header-list{
+    font-size: 1.1rem;
+    display: flex;
+    gap:2rem;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.header-list li{
+    width: 175px;
+    padding: 5px 20px;
+}
+
+.header-list li::before{
+    content: "• ";
+}
+.content{
+    margin:0 7.5vw;
+}
+.content h1{
+    font-size:2.5rem;
+    margin: 40px 0;
+}
+.cards{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 5vw;
+}
+.card{
+    flex: 0 1 225px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.card-text{
+    box-sizing: border-box;
+    padding: 25px 25px;
+}
+
+.card-img{
+    width: 100%;
+}
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-accent);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    /* padding: 5px; */
+}
+.info-card{
+    display: flex;
+    gap: 40px;
+    
+}
+.info-card>div{
+    flex: 1 1 0;
+}
+
+.info-card div img{
+    width: 100%;
+}
+
+#footer{
+    
+    display: flex;
+    gap:10px;
+}
+.copyright{
+    color:white;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    flex: 90 1 0;
+}
+.social{
+    background-color: #000000;
+    /* margin: 40px; */
+    padding:10px;
+    flex: 2 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-brands{
+    color:white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:1050px) {
+    .cards{
+        flex-direction: column;
+        justify-content:  flex-start;
+        margin:0 22vw;
+        gap:40px;
+    }
+    .card{
+        flex: 0 1 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+}

@@ -1,0 +1,68 @@
+.wrapper, html, body {
+    height: 100%;
+    margin: 0;
+}
+.wrapper div{
+    border: 1px solid black;
+}
+.middleware{
+    background-color: red !important;
+}
+
+.one,.five{
+    background-color: blanchedalmond;
+    flex:1 1 0;
+}
+.two,.four{
+    background-color: cadetblue;
+}
+.three{
+    background-color: azure;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-1{
+    flex:6 1 0;
+    display: flex;
+}
+.container-1>div{
+    width: 200px;
+}
+
+.two{
+    flex: 1 1 0;
+}
+.container-2{
+    flex: 5 1 0;
+    display: flex;
+    flex-direction: column;
+}
+.middleware{
+    flex: 1 1 0;
+}
+
+.container-3{
+    flex: 8 1 0;
+    display: flex;
+}
+.container-3 div{
+    flex: 1 1 0
+}
+
+.three{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
+}
+.three>div{
+    flex-grow: 0;
+    flex-basis: 100px;
+}
+.middleware-2{
+    background-color: red;
+}

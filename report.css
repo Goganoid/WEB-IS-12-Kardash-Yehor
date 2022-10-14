@@ -84,7 +84,7 @@ button{
     text-decoration: underline;
 }
 .report-contents>ol>li{
-    padding-bottom: 15px;
+    padding-top: 15px;
 }
 .report-container{
     margin-top: 40px;

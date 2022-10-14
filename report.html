@@ -526,6 +526,860 @@
                 </div>
             </div>
         </div>
+
+        <div class="report-container" data-report-id="3">
+            <div class="report-contents">
+                <ol>
+
+                </ol>
+            </div>
+            <div class="report">
+                <div>
+                    <div>
+                        <h1 id="1">Тема, мета</h1>
+                        <p>
+                            <b>Мета</b>придбати практичні навички роботи верстки сторінок засобами CSS, верстки на
+                        основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-
+                        сторінок;придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX
+                        </p>
+                        <p><b>Тема</b>:ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА
+                            ЗАСОБАМИ CSS та FLEXBOX.</p>
+                    </div>
+                </div>
+                <div>
+                    <h1>Завдання 1. Зовнішній вигляд макету</h1>
+                    <p>Сайт має як мінімум три сторінки: головна сторінка, сторінка вибору дошок, сторінка з дошкою</p>
+                    <h2>Головна сторінка</h2>
+                    <img src="./screens/l2s1.png" alt="" style="object-fit:cover;width:100%;">
+                    <pre><code>
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./website.css">
+    <title>MyPlan</title>
+</head>
+<style>
+   
+</style>
+<body>
+    <div id="header">
+        <div class="header-text">
+            MyPlan
+        </div>
+        <div class="buttons">
+            <button class="style-button header-button">Login</button>
+            <button class="style-button header-button">Sign Up</button>
+        </div>
+    </div>
+    <div id="intro">
+        <div class="intro-container">
+            <h2>MyPlan boosts your productivity</h2>
+            <p>Collaborate, manage projects, and reach new productivity peaks.</p>
+            <ul>
+                <li>Fast</li>
+                <li>Feature rich</li>
+                <li>Easy to use</li>
+                <li>Totally free</li>
+            </ul>
+          
+        </div>
+        <div class="intro-container">
+            <div class="cube">
+                <div class="face cube-top"></div>
+                <div class="face cube-bottom"></div>
+                <div class="face cube-left"></div>
+                <div class="face cube-right"></div>
+                <div class="face cube-front"></div>
+                <div class="face cube-back"></div>
+              </div>
+        </div>
+
+    </div>
+    <div id="quote">
+        <h1>"Productivity is never an accident. It is always the result of a commitment to intelligent planning and focused effort."</h1>
+        <div>- Paul J.Meyer</div>
+    </div>
+    <div id="description">
+        <div class="container">
+            <div><img src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="Screenshot"></div>
+            <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio beatae sint sapiente quidem laborum numquam placeat veniam minus ut, temporibus cum doloribus cumque, nostrum maxime, consequatur ad enim iste suscipit.</div>
+        </div>
+    </div>
+    <div id="sign-form">
+        <div class="container">
+            <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio beatae sint sapiente quidem laborum numquam placeat veniam minus ut, temporibus cum doloribus cumque, nostrum maxime, consequatur ad enim iste suscipit.</div>
+            <button class="style-button">Sign Up</button>
+        </div>
+        
+    </div>
+</body>
+</html>
+                    </code></pre>
+                    <pre><code>
+                        
+*{
+    
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+/* ----------------------------HEADER + INTRO---------------------------- */
+#header{
+    position: fixed;
+    z-index: 999;
+    height: 7.5vh;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.25);
+
+}
+.header-text{
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.buttons{
+  display: flex;
+  position: absolute;
+  right: 2px;
+}
+
+#intro{
+    color:white;
+    height: 100vh;
+    display:flex;
+    justify-content: space-around;
+    padding: 20% 10%;
+    box-sizing: border-box;
+    background: rgb(34,193,195);
+    background: linear-gradient(128deg, rgba(34,193,195,1) 0%, rgba(253,45,135,1) 100%);
+} 
+
+
+#intro ul{
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+#intro ul li{
+  padding-left: 0.5rem;
+}
+#intro ul li::marker{
+  content:">";
+}
+    
+div.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform:rotate3d(1, 1, 1, 45deg);
+  }
+  
+div[class*='cube-']{
+  width: 200px;
+  height: 200px;
+  background: skyblue;
+  background: linear-gradient(128deg, rgba(34,193,195,1) 0%, rgba(253,45,135,1) 80%);
+  border: 2px solid black;
+  position: absolute;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 500ms;
+}
+
+.cube-front {
+  transform: translateZ(100px);
+}
+.cube-back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+.cube-left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
+.cube-right {
+  transform: translateX(100px) rotateY(90deg);
+}
+.cube-top {
+  transform: translateY(-100px) rotateX(90deg);
+}
+.cube-bottom {
+  transform: translateY(100px) rotateX(-90deg);
+}
+
+/* ----------------------------QUOTE---------------------------- */
+
+#quote{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 128px;
+  background-color: rgba(34, 192, 195, 0.178);
+}
+#quote div {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: right;
+}
+
+/* ----------------------------DESCRIPTION---------------------------- */
+
+#description{
+  background-color: #9672a321;
+  padding: 6rem 2rem;
+}
+#description .container img{
+  width: 600px;
+}
+#description .container{
+  display: flex;
+  gap:10%;
+}
+/* ----------------------------SIGN FORM---------------------------- */
+#sign-form{
+  padding: 5rem 2rem;
+  background-color:rgba(247, 91, 158, 0.178)
+}
+#sign-form .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  gap:2rem;
+}
+
+.header-button{
+  background-color: white !important;
+  margin: 0 0.5rem;
+  padding: 5px 10px !important;
+  font-size: 1rem !important;
+}
+
+.style-button{
+  background-color: rgba(34,193,195,1);
+  border: 1px solid #222222;
+  display: block;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  transition: box-shadow .15s,transform .15s;
+  box-sizing: border-box;
+
+}
+
+.style-button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.style-button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.style-button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width:1200px) {
+  #intro{
+    flex-direction: column-reverse;
+    padding: 5% 10%;
+    align-items: center;
+  }
+}
+
+                    </code></pre>
+                    <h2>Сторінка вибору дошок</h2>
+                    <img src="./screens/l2s2.png" alt="" style="object-fit:cover;width:100%;">
+                    <pre><code>
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tables.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tables-list">
+            <div class="table-option">
+                <div class="table-name">Table Name</div>
+                <div class="controls">
+                    <button>Delete</button>
+                    <button>Rename</button>
+                </div>
+            </div>
+            <div class="table-option">
+                <div class="table-name">Table Name</div>
+                <div class="controls">
+                    <button>Delete</button>
+                    <button>Rename</button>
+                </div>
+            </div>
+            <div class="table-option">
+                <div class="table-name">Table Name</div>
+                <div class="controls">
+                    <button>Delete</button>
+                    <button>Rename</button>
+                </div>
+            </div>
+            <div class="table-option">
+                <div class="table-name">Table Name</div>
+                <div class="controls">
+                    <button>Delete</button>
+                    <button>Rename</button>
+                </div>
+            </div>
+            <div class="table-option">
+                <div class="table-name">Table Name</div>
+                <div class="controls">
+                    <button>Delete</button>
+                    <button>Rename</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+                    </code></pre>
+                    <pre><code>
+                        *{
+    
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        html{
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 20px;
+                            height: 100%;
+                        }
+                        body{
+                            height: 100%;
+                        }
+                        /* ----------------------------WHOLE PAGE---------------------------- */
+                        .container{
+                            height: 100%;
+                            margin: 0 20%;
+                            padding: 1rem;
+                            background-color: gainsboro;
+                        }
+                        /* ----------------------------TABLE OPTION---------------------------- */
+                        .table-option{
+                            display: flex;
+                            justify-content: space-between;
+                            background-color: aliceblue;
+                            border: 1px solid black;
+                            border-radius: 8px;
+                            margin: 4px 0;
+                            padding: 10px;
+                        }
+                    </code></pre>
+                    <h2>Сторінка з дошкою</h2>
+                    <img src="./screens/l2s3.png" alt="" style="object-fit:cover;width:100%;">
+                    <pre><code>
+                        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div>My Table Name</div>
+            <button>Share</button>
+            <button>Backgrounds</button>
+        </div>
+        <div class="cards-table">
+            <div class="list">
+                <div class="list-name">List Name</div>
+                <div class="list-items">
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                </div>
+                <div class="add-control">
+                    <input type="text">
+                    <button>Add a card</button>
+                </div>
+            </div>
+            <div class="list">
+                <div class="list-name">List Name</div>
+                <div class="list-items">
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                    <div class="list-item">Option</div>
+                </div>
+                <div class="add-control">
+                    <input type="text">
+                    <button>Add a card</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+                    </code></pre>
+                    <pre><code>
+                        *{
+    
+                            padding: 0;
+                            margin: 0;
+                        }
+                        
+                        html{
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 20px;
+                            height: 100%;
+                        }
+                        body{
+                            height: 100%;
+                        }
+                        /* ----------------------------Whole Page---------------------------- */
+                        .container{
+                            height: 100%;
+                            display:flex;
+                            flex-direction: column;
+                        }
+                        /* ----------------------------MENU---------------------------- */
+                        .menu{
+                            flex: 5 1 0;
+                            display: flex;
+                            gap:20px;
+                            background-color: gainsboro;
+                        }
+                        /* ----------------------------TABLE AND IT'S ITEMS---------------------------- */
+                        .cards-table{
+                            flex: 95 1 0;
+                            background-color: aquamarine;
+                            display: flex;
+                            padding: 2rem;
+                        }
+                        
+                        .list{
+                            background-color: gainsboro;
+                            padding: 1rem;
+                            margin: 0 4px;
+                            height: fit-content;
+                            border: 1px solid black;
+                        }
+                        .list-item{
+                            background-color:azure;
+                            border: 1px solid black;
+                            border-radius: 8px;
+                            margin: 0.35rem 0;
+                        }
+                    </code></pre>
+                </div>
+                <div>
+                    <h1>Завдання 2</h1>
+                    <p>Макети 2 і 3</p>
+                    <img src="screens/l2s5.png" alt="">
+                    <h2>Таблична верстка Макет 2</h2>
+                    <img src="screens/l2s4.png" alt="" style="object-fit:cover;width:100%;">
+                    <pre><code>
+                        <div class="wrapper">
+                            <div class="one">One</div>
+                            <div class="two">Two</div>
+                            <div class="middleware">middleware</div>
+                            <div class="three">Three</div>
+                            <div class="four">Four</div>
+                            <div class="five">Five</div>
+                        </div>
+                    </code></pre>
+                    <pre><code>
+                        /* ----------------------------MAIN CONTAINER---------------------------- */
+                        .wrapper {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 10px;
+                            grid-auto-rows: minmax(10vh, auto);
+                        }
+                        /* ----------------------------GENERAL STYLE---------------------------- */
+                        .wrapper div{
+                            border: 1px solid black;
+                        }
+                        /* ----------------------------POSITIONING---------------------------- */
+                        .one{
+                            grid-column: 1/4;
+                            grid-row: 1;
+                        }
+                        .two{
+                            grid-column: 1;
+                            grid-row: 2/8;
+                        }
+                        .four{
+                            grid-column: 3;
+                            grid-row: 3/8;
+                        }
+                        .three{
+                            grid-column: 2;
+                            grid-row: 3/8;
+                        }
+                        .five{
+                            grid-column: 1/4;
+                            grid-row: 8 ;
+                        }
+                        .middleware{
+                            background-color: red !important;
+                            grid-row: 2;
+                            grid-column: 2/4;
+                        }
+                        
+                        .one,.five{
+                            background-color: blanchedalmond;
+                        }
+                        .two,.four{
+                            background-color: cadetblue;
+                        }
+                        .three{
+                            background-color: azure;
+                        }
+                        
+                    </code></pre>
+                    <h2>Блокова верстка Макет 3</h2>
+                    <img src="screens/l2s6.png" alt="" style="object-fit:cover;width:100%;">
+                    <pre>
+                        <code>
+                            <div class="wrapper">
+                                <div class="one">One</div>
+                                <div class="container-1">
+                                    <div class="two">Two</div>
+                                    <div class="container-2">
+                                        <div class="middleware">middleware</div>
+                                        <div class="container-3">
+                                            <div class="three">
+                                                <div>Three</div>
+                                                <div class="middleware-2">middleware</div>
+                                            </div>
+                                            <div class="four">Four</div>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="five">Five</div>
+                        </code>
+                    </pre>
+                    <pre><code>
+
+                        /* ----------------------------GENERAL STYLING---------------------------- */
+                        .wrapper, html, body {
+                            height: 100%;
+                            margin: 0;
+                        }
+                        .wrapper div{
+                            border: 1px solid black;
+                        }
+                        .middleware{
+                            background-color: red !important;
+                        }
+                        .one,.five{
+                            background-color: blanchedalmond;
+                        }
+                        .two,.four{
+                            background-color: cadetblue;
+                        }
+                        .three{
+                            background-color: azure;
+                        }
+                        /* ----------------------------MAIN CONTAINER---------------------------- */
+                        .wrapper{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        /* ----------------------------ONE FIVE TOP AND BOTTOM---------------------------- */
+                        .one,.five{
+                            flex:1 1 0;
+                        }
+                        /* ----------------------------TWO, THREE, FOUR IN CONTAINER-1---------------------------- */
+                        .container-1{
+                            flex:6 1 0;
+                            display: flex;
+                        }
+                        .container-1>div{
+                            width: 200px;
+                        }
+                        .two{
+                            flex: 1 1 0;
+                        }
+                        /* ----------------------------THREE, FOUR + MIDDLEWARE in CONTAINER-2---------------------------- */
+                        .container-2{
+                            flex: 5 1 0;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .middleware{
+                            flex: 1 1 0;
+                        }
+                        
+                        .container-3{
+                            flex: 8 1 0;
+                            display: flex;
+                        }
+                        .container-3 div{
+                            flex: 1 1 0
+                        }
+                        
+                        .three{
+                            display: flex;
+                            flex-direction:column;
+                            justify-content: space-between;
+                            
+                        }
+                        .three>div{
+                            flex-grow: 0;
+                            flex-basis: 100px;
+                        }
+                        .middleware-2{
+                            background-color: red;
+                        }
+                    </code></pre>
+                </div>
+                <div>
+                    <h1>Завання 3 Flexbox</h1>
+                    <h2>Скріншот</h2>
+                    <img src="./screens/l2s7.png" alt="" style="object-fit:cover;width:100%;">
+                    <h2>Код</h2>
+                    <pre><code>
+                        <div id="header">
+                            <h1>Професія Java-розробник</h1>
+                            <ul class="header-list">
+                                <li>Портфоліо для старту кар'єри</li>
+                                <li>Навчання на реальних кейсах</li>
+                                <li>Заробіток після 4 місяців навчання</li>
+                                <li>Можна працювати віддалено</li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h1>Як проходить навчання</h1>
+                            <div class="cards">
+                                <div class="card">
+                                    <div class="card-text">
+                                        <span class="counter">1</span>
+                                        <h3>Дивіться відеолекції</h3>
+                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                    </div>
+                                    <img class="card-img" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png">
+                                </div>
+                                <div class="card">
+                                    <div class="card-text">
+                                        <span class="counter">2</span>
+                                        <h3>Робите завдання і відправляєте на перевірку</h3>
+                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                    </div>
+                                    <img class="card-img" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png">
+                                </div>
+                                <div class="card">
+                                    <div class="card-text">
+                                        <span class="counter">3</span>
+                                        <h3>Чи отримуєте розбір вашої роботи</h3>
+                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                    </div>
+                                    <img class="card-img" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png">
+                                </div>
+                                <div class="card">
+                                    <div class="card-text">
+                                        <span class="counter">4</span>
+                                        <h3>Чи працюєте над помилками</h3>
+                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                    </div>
+                                    <img class="card-img" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png">
+                                </div>
+                            </div>
+                            <h1>Рівні навчання</h1>
+                            <div class="info-card">
+                                <div><img src="NicePng_apple-laptop-png_759777.png" alt=""></div>
+                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni voluptate nesciunt, inventore culpa pariatur laudantium sint doloribus ab adipisci similique, debitis praesentium ut. Quae laboriosam eaque dolorem obcaecati ut.</div>
+                            </div>
+                            <h1>Рівні навчання</h1>
+                            <div class="info-card">
+                                <div><img src="https://www.pngplay.com/wp-content/uploads/9/Website-PNG-Images-HD.png" alt=""></div>
+                                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magni voluptate nesciunt, inventore culpa pariatur laudantium sint doloribus ab adipisci similique, debitis praesentium ut. Quae laboriosam eaque dolorem obcaecati ut.</div>
+                            </div>
+                        </div>
+                        <div id="footer">
+                            <div class="copyright">2022 Yehor Kardash</div>
+                            <div class="social"><i class="fa-brands fa-facebook"></i></div>
+                            <div class="social"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="social"><i class="fa-brands fa-youtube"></i></div>
+                            <div class="social"><i class="fa-brands fa-telegram"></i></div>
+                        </div>    
+                    </code></pre>
+                    <pre><code>
+                        :root {
+                            --main-accent: #ffbd59;
+                        }
+                        html{
+                            font-size:16px;
+                            font-family: 'Roboto', sans-serif;
+                        }
+                        /* ----------------------------HEADER + HEADER LIST---------------------------- */
+                        #header h1{
+                            font-size: 3rem;
+                        }
+                        #header h1, li{
+                            background-color: var(--main-accent);
+                        }
+                        
+                        .header-list{
+                            font-size: 1.1rem;
+                            display: flex;
+                            gap:2rem;
+                            list-style: none;
+                            justify-content: space-around;
+                        }
+                        
+                        .header-list li{
+                            width: 175px;
+                            padding: 5px 20px;
+                        }
+                        
+                        .header-list li::before{
+                            content: "• ";
+                        }
+                        /* ----------------------------MAIN CONTENT---------------------------- */
+                        .content{
+                            margin:0 7.5vw;
+                        }
+                        .content h1{
+                            font-size:2.5rem;
+                            margin: 40px 0;
+                        }
+                        /* ----------------------------CARDS---------------------------- */
+                        .cards{
+                            margin-top: 40px;
+                            display: flex;
+                            justify-content: space-around;
+                            margin: 0 5vw;
+                        }
+                        .card{
+                            flex: 0 1 225px;
+                            border: 1px solid black;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            
+                        }
+                        .card-text{
+                            box-sizing: border-box;
+                            padding: 25px 25px;
+                        }
+                        
+                        .card-img{
+                            width: 100%;
+                        }
+                        /* ----------------------------COUNTER---------------------------- */
+                        .counter{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--main-accent);
+                            width: 2rem;
+                            height: 2rem;
+                            border-radius: 50%;
+                            /* padding: 5px; */
+                        }
+                        /* ----------------------------РІВНІ НАВЧАННЯ BLOCKS---------------------------- */
+                        .info-card{
+                            display: flex;
+                            gap: 40px;
+                            
+                        }
+                        .info-card>div{
+                            flex: 1 1 0;
+                        }
+                        
+                        .info-card div img{
+                            width: 100%;
+                        }
+                        /* ----------------------------FOOTER---------------------------- */
+                        #footer{
+                            
+                            display: flex;
+                            gap:10px;
+                        }
+                        .copyright{
+                            color:white;
+                            display: flex;
+                            align-items: center;
+                            background-color: #000000;
+                            flex: 90 1 0;
+                        }
+                        .social{
+                            background-color: #000000;
+                            /* margin: 40px; */
+                            padding:10px;
+                            flex: 2 1 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .fa-brands{
+                            color:white;
+                            font-size: 1.5rem;
+                        }
+                        
+                        @media screen and (max-width:1050px) {
+                            .cards{
+                                flex-direction: column;
+                                justify-content:  flex-start;
+                                margin:0 22vw;
+                                gap:40px;
+                            }
+                            .card{
+                                flex: 0 1 100px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                
+                            }
+                        }
+                    </code></pre>
+                </div>
+                <div>
+                    <h1>Висновки</h1>
+                    <p>Придбав практичні навички роботи верстки сторінок засобами CSS, верстки на
+                        основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-
+                        сторінок;придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX</p>
+                    <p>css grid: сітка двовимірна, що відкриває багато можливостей для дизайну сторінки. Тому css grid слід використовувати на верхніх рівнях ієрархії, де потрібні широкі можливості для розташування блоків </p>
+                    <p>flexbox: на відміну від css grid одновимірний, тобто може бути тільки колонкою або рядком. Він погано підходить для оформлення сітки, але ним зручно розташовувати елементи по горизонталі або вертикалі</p>
+                </div>
+            </div>
+        </div>
     </div>
 
    
@@ -568,7 +1422,21 @@
                 contents.innerHTML+=`
                         <li><a href="#${chapter_id}">
                             ${chapter.innerHTML}
-                        </a></li>`
+                        </a></li>`;
+                let subchapters = chapter.parentElement.querySelectorAll("h2");
+                if(subchapters.length!=0){
+                    let elements = '';
+                    for(let [subchapter_index,subchapter] of subchapters.entries()){
+                    let subchapter_id = `${report_index}-${chapter_index}-${subchapter_index}`;
+                    subchapter.id= subchapter_id;
+                    elements+=`
+                            <li><a href="#${subchapter_id}">
+                                ${subchapter.innerHTML}
+                            </a></li>`;
+                    }
+                contents.innerHTML+=`<ol>${elements}</ol>`;
+                }
+               
             }
         }
     </script>
