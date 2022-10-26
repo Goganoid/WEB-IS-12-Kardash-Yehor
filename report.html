@@ -535,7 +535,6 @@
             </div>
             <div class="report">
                 <div>
-                    <div>
                         <h1 id="1">Тема, мета</h1>
                         <p>
                             <b>Мета</b>придбати практичні навички роботи верстки сторінок засобами CSS, верстки на
@@ -544,7 +543,6 @@
                         </p>
                         <p><b>Тема</b>:ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА
                             ЗАСОБАМИ CSS та FLEXBOX.</p>
-                    </div>
                 </div>
                 <div>
                     <h1>Завдання 1. Зовнішній вигляд макету</h1>
@@ -1378,6 +1376,403 @@ div[class*='cube-']{
                     <p>css grid: сітка двовимірна, що відкриває багато можливостей для дизайну сторінки. Тому css grid слід використовувати на верхніх рівнях ієрархії, де потрібні широкі можливості для розташування блоків </p>
                     <p>flexbox: на відміну від css grid одновимірний, тобто може бути тільки колонкою або рядком. Він погано підходить для оформлення сітки, але ним зручно розташовувати елементи по горизонталі або вертикалі</p>
                 </div>
+            </div>
+            
+        </div>
+        <div class="report-container" data-report-id="4">
+            <div class="report-contents">
+                <ol>
+
+                </ol>
+            </div>
+            <div class="report">
+                <div>
+                    <h1 id="1">Тема, мета</h1>
+                    <p>
+                        <b>Мета</b>придбати практичні навички роботи маніпулювання інформаційним
+                        вмістом Web-документа засобами мови JavaScript
+                    </p>
+                    <p><b>Тема</b>:ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ.
+                        КЛАСИ,ОБ’ЄКТИ, ФУНКЦІЇ, В МОВІ JAVASCRIPT. ПОДІЇ ТА ОБРОБКА ПОДІЙ.
+                        ПРОГРАМНА ВЗАЄМОДІЯ З HTML ДОКУМЕНТАМИ НА ОСНОВІ DOM АРІ</p>
+            </div>
+            <div>
+                <h1>Завдання 1</h1>
+                <p>Створити одновимірний масив, кількість елементів якого задана користувачем.
+                    Обчислити суму елементів між максимальним та мінімальними значеннями
+                    масиву.
+                    
+                    Упорядкувати масив у порядку зростання.(метод Швидкого
+                    сортування)Надрукувати вхідний та вихідний масив.
+                    Застосувати функції</p>
+                <h2>HTML</h2>
+                <pre><code>
+                    <div id="arrays">
+                        <div id="original">Original: </div>
+                        <div id="sorted">Sorted: </div>
+                    </div>
+                </code></pre>
+                <h2>JS</h2>
+                <pre><code>
+                    function QuickSort(Arr){
+                        if(Arr.length <= 1){
+                          return Arr;
+                        }
+                      
+                        const pivot = Arr[Arr.length - 1];
+                        const leftArr = [];
+                        const rightArr = [];
+                      
+                        for(let i=0; i < Arr.length-1;i++){
+                          Arr[i] < pivot ? leftArr.push(Arr[i]) :  rightArr.push(Arr[i])
+                        }
+                      
+                        return [...QuickSort(leftArr) ,pivot,...QuickSort(rightArr)];
+                      
+                      }
+                    function getRandomInt(min, max) {
+                        min = Math.ceil(min);
+                        max = Math.floor(max);
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+                    function randomArray(length,min,max){
+                        return [...new Array(length)].map(()=>getRandomInt(min,max))
+                    }
+                    
+                    const array = randomArray(20,0,100);
+                    const sortedArray = QuickSort(array);
+                    document.getElementById("original").innerText+= `[${array.join(', ')}]`;
+                    document.getElementById("sorted").innerText+= `[${sortedArray.join(', ')}]`; 
+                </code></pre>
+                <h2>Вивід</h2>
+                <img src="screens/l4s1.png" alt="">
+            </div>
+            <div>
+                <h1>Завдання 2</h1>
+                <p>Календар</p>
+                <p>Реалізувати можливість вибору дати у елемент форми з спеціального візуального компоненту.
+                    Вимоги до компоненту: вибір числа, перехід між
+                    місяцями та роками, відміна вибору дати.</p>
+                <h2>HTML</h2>
+                <pre><code>
+                    <div id="calendar">
+                        <!-- YEAR SELECTOR -->
+                        <div id="year-menu" class="selector">
+                            <button id="year-back">&lt;</button>
+                            <div id="year"></div>
+                            <button id="year-next">&gt;</button>
+                        </div>
+                         <!-- MONTH SELECTOR -->
+                        <div id="month-menu" class="selector">
+                            <button id="month-back">&lt;</button>
+                            <div id="month"></div>
+                            <button id="month-next">&gt;</button>
+                        </div>
+                         <!-- FORM -->
+                        <div class="form">
+                            <input type="text" id="inputDisplay" disabled>
+                            <button id="submit">Sumbit</button>
+                        </div>
+                         <!-- CALENDAR-->
+                        <div id="calendar-table">
+                
+                        </div>
+                    </div>
+                </code></pre>
+                <h2>CSS</h2>
+                <pre><code>
+                    #calendar-table td{
+                        border: 1px solid;
+                        margin: 0;
+                        text-align: center;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                    #calendar-table td:hover{
+                        background-color: rgba(0, 0, 0, 0.075);
+                    }
+                    #calendar{
+                        width: fit-content;
+                    }
+                    #calendar-table table{ 
+                        width: 20rem;
+                        height: 20rem;
+                        border-collapse: collapse;
+                        table-layout: fixed;
+                    }
+                    
+                    .selector{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    
+                    .selected{
+                        background-color: rgba(0, 0, 255, 0.418) !important;
+                    }
+                </code></pre>
+                <h2>JS</h2>
+                <pre><code>
+                    const daysOfWeek=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"]
+
+
+class Calendar{
+    constructor(){
+        // set date
+        let today = new Date();
+        this.year = today.getFullYear();
+        this.month = today.getMonth();
+        this.day = today.getDate();
+        this.completed = true;
+
+        // get elements
+        this.daysTable = document.getElementById("calendar-table");
+
+        this.yearDisplay =    document  .getElementById("year");
+        this.yearNextButton = document  .getElementById("year-next");
+        this.yearBackButton = document  .getElementById("year-back");
+
+        this.monthDisplay =    document .getElementById("month");
+        this.monthNextButton = document .getElementById("month-next");
+        this.monthBackButton = document .getElementById("month-back");
+
+        this.inputForm = document.getElementById("inputDisplay");
+        this.submitButton = document.getElementById("submit");
+        // configure year and month selector
+        this.configureSelector('year',this.yearDisplay,this.yearNextButton,this.yearBackButton,1970,2100);
+        this.configureSelector('month',this.monthDisplay,this.monthNextButton,this.monthBackButton,1,12);
+        // set calendar and form
+        this.update()
+        
+    }
+    // rerender calendar and input form
+    update(){
+        this.updateDaysTable();
+        this.updateInputForm();
+    }
+    // update form
+    updateInputForm(){
+        this.inputForm.value = `${this.year}/${this.month}/${this.completed ? this.day : '?'}`;
+        this.submitButton.disabled = !this.completed;
+    }
+    // configure year or month selector, add onclick events
+    configureSelector(prop,display,nextButton,backButton,minVal,maxVal){
+        display.innerText = this[prop];
+        nextButton.onclick = (e)=>{
+            e.preventDefault();
+            if(this[prop]>=maxVal) return;
+            this[prop]++;
+            display.innerText = this[prop];
+            this.completed = false;
+            this.update()
+
+        }
+        backButton.onclick = (e)=>{
+            e.preventDefault();
+            if(this[prop]<=minVal) return;
+            this[prop]--;
+            display.innerText = this[prop];
+            this.completed = false;
+            this.update();
+        }
+    }
+    // get days in month
+    daysInMonth() { 
+        return 32 -  new Date(this.year, this.month, 32).getDate();
+    }
+    updateDaysTable(){
+        const daysInMonth =  this.daysInMonth();
+        let rows = Math.ceil(daysInMonth/7);
+        let columns = 7;
+        // adding cells
+        let content = '';
+        content+="<table>";
+        content+="<tr>";
+        for(let day of daysOfWeek){
+            content+=`<th>${day}</th>`;
+        }
+        content+="</tr>";
+        for(let row=0;row<rows;row++){
+            content+="<tr>";
+            for(let column=1;column<=columns;column++){
+                let day =7*(row)+column;
+                let cellContent = day<=daysInMonth ? day : '';
+                content+=`<td value=${cellContent}>${cellContent}</td>`;
+            }
+            content+="</tr>";
+        }
+        content+="</table>";
+        this.daysTable.innerHTML = content;
+        // set cell with current day by default
+        if(this.month == new Date().getMonth() 
+        && this.year == new Date().getFullYear()
+        && document.getElementsByClassName("selected").length==0){
+            this.daysTable.querySelector(`td[value="${this.day}"]`).classList.toggle("selected")
+        }
+
+        // add onclick events to cells
+        let cells = this.daysTable.querySelectorAll("td");
+
+        for(let i=0;i<cells.length;i++){
+            cells[i].onclick = (e)=>{
+                console.log(e);
+                let daySelected = e.target.getAttribute("value");
+                if(daySelected=='') return;
+                daySelected = parseInt(daySelected)
+                // remove previous
+                let previousSelected = document.getElementsByClassName("selected")[0];
+                previousSelected?.classList.toggle("selected");
+
+                if(daySelected!=this.day){
+                    e.target.classList.toggle("selected");
+                    this.day = daySelected;
+                    this.completed = true;
+                }
+                else{
+                    this.completed = false;
+                    
+                }
+                this.updateInputForm();
+            }
+        }
+    }
+
+}
+
+
+
+let calendar = new Calendar();
+
+                </code></pre>
+                <h2>Вивід</h2>
+                <img src="screens/l4s2.png" alt="" srcset="">
+            </div>
+            <div>
+                <h1>Завдання 3</h1>
+                <p>
+                    У власному сайті на свій розсуд застосувати сценарії на JavaScript.
+                    Продемонструвати викладачу та відобразити у звітному HTML-
+                    документі.
+                </p>
+                <h2>HTML</h2>
+                <pre><code>
+                    <div class="cards-table">
+                        <div class="list">
+                            <div class="list-header">
+                                <div class="list-name">List Name</div>
+                                <div class="list-menu">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                               
+                            </div>
+                            <div class="list-items">
+                                <div class="list-item">Option</div>
+                                <!-- ........ -->
+                            </div>
+                            <div class="add-control">
+                                <input class="new-card-input fade-hover" type="text" placeholder=" + Add new card">
+                            </div>
+                        </div>
+                        <div id="add-list-controls">
+                            <button id="add-list">Add new list</button>
+                            <input type="text" id="add-list-input" class="hidden" placeholder="Enter list title">
+                            <div id="add-list-buttons" class = "hidden">
+                                <button id="confirm-list">Add</button>
+                                <button id="cancel-list" >X</button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </code></pre>
+                <h2>JS</h2>
+                <pre><code>
+                    let addListButton = document.getElementById("add-list");
+let addListInput = document.getElementById("add-list-input");
+let listControlButtons = document.getElementById("add-list-buttons");
+let confirmList = document.getElementById("confirm-list");
+let cancelList = document.getElementById("cancel-list");
+
+let board = document.getElementsByClassName("cards-table")[0];
+
+
+// show add list button or input form
+function toggleAddListStage(){
+    addListButton.classList.toggle("hidden");
+    addListInput.classList.toggle("hidden");
+    listControlButtons.classList.toggle("hidden");
+}
+
+
+// update all 'Add Card' inputs
+function updateAddCardButtons(){
+    let addCardButtons = document.getElementsByClassName("new-card-input");
+    for(let i=0; i<addCardButtons.length;i++){
+        addCardButtons[i].onkeydown= (e)=>{
+                if(e.keyCode == 13){
+                    console.log(e);
+                    if(e.target.value.length==0){
+                        alert("Card title can't be empty");
+                        return;
+                    }
+                    console.log(e.target.parentElement);
+                    let list = e.target.parentElement.parentElement.getElementsByClassName("list-items")[0];
+                    Card(list,e.target.value);
+                }
+        }
+    }
+}
+// add card
+function Card(list,title){
+    list.innerHTML+=`<div class="list-item">${title}</div>`;
+}
+
+// add list
+function List(name){
+    let list = document.createElement("div");
+    list.classList.add("list")
+    list.innerHTML+= `
+    <div class="list-header">
+    <div class="list-name">${name}</div>
+    <div class="list-menu">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+    </div>
+    <div class="list-items">
+    </div>
+    <div class="add-control">
+    <input class="new-card-input fade-hover" type="text" placeholder=" + Add new card">`;
+    board.appendChild(list);
+    updateAddCardButtons();
+}
+
+addListButton.onclick = ()=>{
+    toggleAddListStage();
+}
+cancelList.onclick = ()=>{
+    toggleAddListStage();
+}
+
+confirmList.onclick = ()=>{
+    console.log(addListInput.value)
+    if(addListInput.value.length==0) {
+        alert("List title can't be empty");
+        return;
+    }
+    List(addListInput.value);
+    toggleAddListStage();   
+}
+
+updateAddCardButtons();
+                </code></pre>
+                <h2>Вивід</h2>
+                <img src="screens/l4s3.png" alt="">
+            </div>
+            <div>
+                <h1>Висновки</h1>
+                <p>Придбав практичні навички роботи маніпулювання інформаційним
+                    вмістом Web-документа засобами мови JavaScript</p>
+            </div>
             </div>
         </div>
     </div>

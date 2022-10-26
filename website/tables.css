@@ -4,27 +4,118 @@
     margin: 0;
 }
 
+#header{
+    /* position: fixed; */
+    z-index: 999;
+    height: 7.5vh;
+    width: 100%;
+    /* background: white; */
+    background-color:rgba(34, 192, 195, 0.178);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.25);
+}
+.user-profile-button{
+    display: block;
+    border-radius: 50%;
+    border:1px solid;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-profile-button i{
+    display: block;
+}
+.header-text{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.buttons{
+  display: flex;
+  position: absolute;
+  right: 1rem;
+}
+
+
 html{
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     height: 100%;
+    width: 100%;
 }
 body{
     height: 100%;
+    width: 100%;
+    background-color: #FAFBFC;
 }
 
 .container{
     height: 100%;
-    margin: 0 20%;
+    margin: 0 15%;
+    width: 70%;
     padding: 1rem;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+}
+.tables-list{
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 .table-option{
+    padding: 16px;
     display: flex;
-    justify-content: space-between;
-    background-color: aliceblue;
-    border: 1px solid black;
+    justify-content: stretch;
+    width: 23.5%;
+    min-width: 200px;
+    max-width: 255px;
+    box-sizing: border-box;
+    position: relative;
+}
+.table-option a{
+    display: block;
     border-radius: 8px;
-    margin: 4px 0;
-    padding: 10px;
+    width: 100%;
+    background-size: cover;
+    text-decoration: none;
+    background-position: 50% 50%;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+.table-name{
+    color:white;
+    height: 80px;
+}
+.fade{
+    background-color: #00000026;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    transition: background-color 0.2s;
+}
+.fade:hover{
+    background-color: #00000040;
+}
+@media screen and (max-width:1270px) {
+    .table-option{
+        min-width: 150px;
+    }
+}
+@media screen and (max-width:950px) {
+    .tables-list{
+        flex-direction: column;
+        align-items: center;
+    }
+    .table-option{
+        width: 100%;
+        max-width: none;
+    }
 }

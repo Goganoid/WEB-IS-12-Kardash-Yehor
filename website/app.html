@@ -13,12 +13,21 @@
     <div class="container">
         <div class="menu">
             <div>My Table Name</div>
-            <button>Share</button>
-            <button>Backgrounds</button>
+            <button>Share </button>
+            <button>Backgrounds <i class="fa-solid fa-arrow-turn-down"></i> </button>
+            <a href="" class="user-profile-button">
+                <i class="fa-regular fa-user"></i>
+            </a>
         </div>
         <div class="cards-table">
             <div class="list">
-                <div class="list-name">List Name</div>
+                <div class="list-header">
+                    <div class="list-name">List Name</div>
+                    <div class="list-menu">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                   
+                </div>
                 <div class="list-items">
                     <div class="list-item">Option</div>
                     <div class="list-item">Option</div>
@@ -27,26 +36,23 @@
                     <div class="list-item">Option</div>
                 </div>
                 <div class="add-control">
-                    <input type="text">
-                    <button>Add a card</button>
+                    <input class="new-card-input fade-hover" type="text" placeholder=" + Add new card">
                 </div>
             </div>
-            <div class="list">
-                <div class="list-name">List Name</div>
-                <div class="list-items">
-                    <div class="list-item">Option</div>
-                    <div class="list-item">Option</div>
-                    <div class="list-item">Option</div>
-                    <div class="list-item">Option</div>
-                    <div class="list-item">Option</div>
+            <div id="add-list-controls">
+                <button id="add-list">Add new list</button>
+                <input type="text" id="add-list-input" class="hidden" placeholder="Enter list title">
+                <div id="add-list-buttons" class = "hidden">
+                    <button id="confirm-list">Add</button>
+                    <button id="cancel-list" >X</button>
                 </div>
-                <div class="add-control">
-                    <input type="text">
-                    <button>Add a card</button>
-                </div>
+                
             </div>
+            
         </div>
 
     </div>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/799fb95278.js" crossorigin="anonymous"></script>
 </body>
 </html>

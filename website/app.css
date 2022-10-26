@@ -16,30 +16,154 @@ body{
     height: 100%;
     display:flex;
     flex-direction: column;
+    background:url("images/background1.jpg");
 }
+
 .menu{
     flex: 5 1 0;
     display: flex;
+    align-items: center;
+    padding: 0 1rem;
     gap:20px;
-    background-color: gainsboro;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.user-profile-button{
+    position: absolute;
+    right: 1rem;
+    display: block;
+    border-radius: 50%;
+    border:1px solid;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-profile-button i{
+    display: block;
+}
+.menu button{
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+}
+.menu button:hover{
+    background-color: rgba(49, 49, 49, 0.158);
 }
 .cards-table{
+    overflow-x: scroll;
     flex: 95 1 0;
-    background-color: aquamarine;
     display: flex;
     padding: 2rem;
 }
 
 .list{
-    background-color: gainsboro;
+    background-color: #ebecf0;
     padding: 1rem;
     margin: 0 4px;
     height: fit-content;
     border: 1px solid black;
+    flex:0 0 250px;
+}
+.list-items{
+    width: 100%;
 }
 .list-item{
-    background-color:azure;
+    cursor: pointer;
+    word-break: break-all;
+    background-color:white;
     border: 1px solid black;
-    border-radius: 8px;
     margin: 0.35rem 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #091e4240;
+    padding: 6px 8px 2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.new-card-input{
+   cursor: pointer;
+   border: none;
+   background-color: transparent;
+   padding: 6px 8px 2px;
+   border-radius: 3px;
+}
+.new-card-input::placeholder{
+    font-size: 20px;
+}
+.list-header{
+    display: flex;
+    justify-content: space-between;
+}
+.list-menu{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-menu:hover{
+    background-color: #00000021;
+}
+
+.fade-hover:hover,.list-item:hover{
+    background-color: #00000010;
+}
+
+#add-list,#cancel-list{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: fit-content;
+    cursor: pointer;
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #091e4240;
+    padding: 6px 50px 2px
+    
+}
+#cancel-list{
+    padding: 6px 10px 2px !important;
+}
+#add-list-input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: fit-content;
+    cursor: pointer;
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #091e4240;
+    padding: 6px 10px 2px;
+}
+#add-list:hover,#cancel-list:hover{
+    background-color: rgba(255, 255, 255, 0.575);
+}
+#add-list-buttons{
+    display: flex;
+}
+#add-list-controls{
+    order:2;
+    flex:0 0 250px;
+    width: 200px;
+}
+#confirm-list{
+    display: block;
+    box-shadow: none;
+    background-color: #0079bf;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 6px 50px 2px;
+    color:white
+}
+#confirm-list:hover{
+    background-color: #0079bf77;
+}
+
+ .hidden{
+    display: none !important;
 }

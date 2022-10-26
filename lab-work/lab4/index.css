@@ -1,0 +1,28 @@
+#calendar-table td{
+    border: 1px solid;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+}
+#calendar-table td:hover{
+    background-color: rgba(0, 0, 0, 0.075);
+}
+#calendar{
+    width: fit-content;
+}
+#calendar-table table{ 
+    width: 20rem;
+    height: 20rem;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.selector{
+    display: flex;
+    justify-content: space-between;
+}
+
+.selected{
+    background-color: rgba(0, 0, 255, 0.418) !important;
+}
