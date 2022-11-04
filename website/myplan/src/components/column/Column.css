@@ -1,0 +1,44 @@
+.list{
+    background-color: #ebecf0;
+    padding: 1rem;
+    margin: 0 4px;
+    height: fit-content;
+    border: 1px solid black;
+    flex:0 0 250px;
+}
+.list-items{
+    width: 100%;
+    min-height: 50px;
+}
+
+
+.new-card-input{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 6px 8px 2px;
+    border-radius: 3px;
+ }
+ .new-card-input::placeholder{
+     font-size: 20px;
+ }
+ .list-header{
+     display: flex;
+     justify-content: space-between;
+ }
+ .list-menu-button{
+     position: relative;
+     width: 32px;
+     height: 32px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .list-menu-button:hover{
+     background-color: #00000021;
+ }
+
+ .list-menu{
+    position: absolute;
+ }
+ 

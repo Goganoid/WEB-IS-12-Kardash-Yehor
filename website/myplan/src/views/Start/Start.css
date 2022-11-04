@@ -1,0 +1,176 @@
+
+*{
+    
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+}
+/* ----------------------------HEADER + INTRO---------------------------- */
+
+
+#intro{
+    color:white;
+    height: 100vh;
+    display:flex;
+    justify-content: space-around;
+    padding: 20% 10%;
+    box-sizing: border-box;
+    background: rgb(34,193,195);
+    background: linear-gradient(128deg, rgba(34,193,195,1) 0%, rgba(253,45,135,1) 100%);
+} 
+
+
+#intro ul{
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+#intro ul li{
+  padding-left: 0.5rem;
+}
+#intro ul li::marker{
+  content:">";
+}
+    
+div.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform:rotate3d(1, 1, 1, 45deg);
+  }
+  
+div[class*='cube-']{
+  width: 200px;
+  height: 200px;
+  background: skyblue;
+  background: linear-gradient(128deg, rgba(34,193,195,1) 0%, rgba(253,45,135,1) 80%);
+  border: 2px solid black;
+  position: absolute;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 500ms;
+}
+
+.cube-front {
+  transform: translateZ(100px);
+}
+.cube-back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+.cube-left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
+.cube-right {
+  transform: translateX(100px) rotateY(90deg);
+}
+.cube-top {
+  transform: translateY(-100px) rotateX(90deg);
+}
+.cube-bottom {
+  transform: translateY(100px) rotateX(-90deg);
+}
+
+/* ----------------------------QUOTE---------------------------- */
+
+#quote{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 96px 128px;
+  background-color: rgba(34, 192, 195, 0.178);
+}
+#quote div {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: right;
+}
+
+/* ----------------------------DESCRIPTION---------------------------- */
+
+#description{
+  background-color: #9672a321;
+  padding: 6rem 15rem;
+}
+#description .container img{
+  width: 100%;
+}
+#description .container{
+  display: flex;
+  gap:10%;
+}
+.container-img{
+  flex: 1;
+}
+.text{
+  flex:1  ;
+}
+/* ----------------------------SIGN FORM---------------------------- */
+#sign-form{
+  padding: 5rem 2rem;
+  background-color:rgba(247, 91, 158, 0.178)
+}
+#sign-form .container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  gap:2rem;
+}
+
+.header-button{
+  background-color: white !important;
+  margin: 0 0.5rem;
+  padding: 5px 10px !important;
+  font-size: 1rem !important;
+}
+
+.style-button{
+  background-color: rgba(34,193,195,1);
+  border: 1px solid #222222;
+  display: block;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  transition: box-shadow .15s,transform .15s;
+  box-sizing: border-box;
+
+}
+
+.style-button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.style-button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.style-button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width:1200px) {
+  #intro{
+    flex-direction: column-reverse;
+    padding: 5% 10%;
+    align-items: center;
+  }
+  #description .container{
+    flex-direction: column;
+  }
+}
