@@ -13,22 +13,21 @@ import Login from './views/Auth/Login';
 import Dashboard from './views/Dashboard/Dashboard';
 import { TablePage } from './views/TablesPage/TablesPage';
 import { Logout } from './views/Logout/Logout';
+import { ProtectedRoute } from './views/ProtectedRoute/ProtectedRoute';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
     children:[
       {
-        path:"test",
-        element:<div>TestPath</div>
-      },
-      {
         index:true,
         element:<Start></Start>
       },
       {
         path:"dashboard/:dashboardId",
-        element:<Dashboard></Dashboard>
+        element:<ProtectedRoute>
+          <Dashboard></Dashboard>
+        </ProtectedRoute>
       },
       {
         path:"register",
@@ -40,7 +39,9 @@ const router = createBrowserRouter([
       },
       {
         path:"profile",
-        element:<TablePage></TablePage>
+        element:<ProtectedRoute>
+          <TablePage></TablePage>
+        </ProtectedRoute>
       },
       {
         path:"logout",
