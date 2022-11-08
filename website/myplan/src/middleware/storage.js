@@ -1,5 +1,4 @@
 export function setUserData({token, userId}) {
-    console.log(token, userId);
     localStorage.setItem('token', token);
     localStorage.setItem('userId', userId);
 }

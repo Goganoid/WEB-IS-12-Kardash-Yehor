@@ -11,7 +11,7 @@ export const Card = (props) => {
     <Draggable draggableId={props.card.id.toString()} index={props.index} isDragDisabled={props.disabled}>
         {
             (provided) =>(
-                <div class="list-item" 
+                <div className="list-item" 
                 {...provided.draggableProps} 
                 {...provided.dragHandleProps}
                 ref={provided.innerRef}
@@ -23,7 +23,7 @@ export const Card = (props) => {
                     !props.disabled
                     ?
                     <button className="delete-list-item" onClick={deleteListItem}>
-                    <i class="fa-regular fa-circle-xmark"></i>
+                    <i className="fa-regular fa-circle-xmark"></i>
                   </button>
                   :null
                   }

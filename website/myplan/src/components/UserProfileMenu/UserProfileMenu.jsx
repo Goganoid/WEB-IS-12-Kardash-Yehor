@@ -13,7 +13,7 @@ export const UserProfileMenu = () => {
         isLoggedIn() ?
           (
             <div className="user-profile-button">
-              <i class="fa-regular fa-user" onClick={toggleMenu}></i>
+              <i className="fa-regular fa-user" onClick={toggleMenu}></i>
               {
                 showMenu
                   ?
@@ -29,8 +29,8 @@ export const UserProfileMenu = () => {
             </div>)
           :
           (<>
-            <Link to="/register"><button class="style-button header-button">Sign Up</button></Link>
-            <Link to="/login"><button class="style-button header-button">Login</button></Link>
+            <Link to="/register"><button className="style-button header-button">Sign Up</button></Link>
+            <Link to="/login"><button className="style-button header-button">Login</button></Link>
           </>
           )
       }

@@ -30,7 +30,6 @@ export const DashboardTopMenu = ({ name, memberships, changeBackgroundHook, addU
       alert("Incorrect data");
       return;
     }
-    console.log(email, newUserRole);
     addUserHook(email, newUserRole);
   }
   let removeUser = (id) => {
@@ -39,10 +38,11 @@ export const DashboardTopMenu = ({ name, memberships, changeBackgroundHook, addU
 
   return (
     <>
-      <div class="menu">
+      <div className="menu">
      
         <Editable
         hook={(name)=>{ changeDashboardNameHook(name)}}
+        disabled={role!==0}
         >
           <div>{name}</div>
         </Editable>
@@ -71,11 +71,11 @@ export const DashboardTopMenu = ({ name, memberships, changeBackgroundHook, addU
 
 
                         return <div className="dashboard-user" key={membership.memberId}>
-                          <span class="name">{`${membership.member.firstName} ${membership.member.lastName}`}</span>
-                          <span class="role">{role}</span>
+                          <span className="name">{`${membership.member.firstName} ${membership.member.lastName}`}</span>
+                          <span className="role">{role}</span>
                           {membership.memberRole !== 0
                             ?
-                            <i class="fa-regular fa-circle-xmark remove-user-button" onClick={() => removeUser(membership.memberId)}></i>
+                            <i className="fa-regular fa-circle-xmark remove-user-button" onClick={() => removeUser(membership.memberId)}></i>
                             :
                             null
                           }
@@ -105,16 +105,16 @@ export const DashboardTopMenu = ({ name, memberships, changeBackgroundHook, addU
           disabled={role!==0}
           className='background-menu'
           onClick={toggleShowBackgroundSelector}
-        >Backgrounds <i class="fa-solid fa-arrow-turn-down"></i>
+        >Backgrounds <i className="fa-solid fa-arrow-turn-down"></i>
           {
             showBackgroundSelector ?
-              (<div class="selector">
+              (<div className="selector">
                 <h2>Backgrounds</h2>
                 {backgrounds.map(background => {
                   let backgroundImg = require(`../../images/${background}`);
-                  return <div class="background-preview-container" onClick={() => changeBackgroundHook(background)}>
+                  return <div className="background-preview-container" onClick={() => changeBackgroundHook(background)}>
                     <div className="overlay"></div>
-                    <img src={backgroundImg} class="background-preview" alt="Loading..." />
+                    <img src={backgroundImg} className="background-preview" alt="Loading..." />
                   </div>
 
                 })}
@@ -124,8 +124,8 @@ export const DashboardTopMenu = ({ name, memberships, changeBackgroundHook, addU
           }
 
         </button>
-        <Link to="/profile" class="user-profile-button">
-          <i class="fa-regular fa-user"></i>
+        <Link to="/profile" className="user-profile-button">
+          <i className="fa-regular fa-user"></i>
         </Link>
       </div>
     </>

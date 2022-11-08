@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import { addColumn } from '../../middleware/dashboardApi';
 import './AddListControls.css'
 export const AddListControls = ({dashboardId,addColumnHook}) => {
 
@@ -9,7 +8,7 @@ export const AddListControls = ({dashboardId,addColumnHook}) => {
     const toggleStage = () => setSecondStage(!isSecondStage);
 
     const addList = () =>{
-        if(listName.length==0) {
+        if(listName.length===0) {
             alert("List title can't be empty");
             return;
         }

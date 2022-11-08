@@ -26,7 +26,6 @@ export class Dashboard extends Component {
     state = null;
     onDragEnd = result => {
         const { destination, source, draggableId } = result;
-        console.log(result);
         if (!destination) return;
         if (destination.droppableId === source.droppableId && destination.index === source.index) return;
         const startColumnInd = this.state.columns.findIndex(column => column.id === parseInt(source.droppableId));
@@ -36,8 +35,6 @@ export class Dashboard extends Component {
 
         const draggableCardInd = startColumn.cards.findIndex(card => card.id === parseInt(draggableId));
         let draggableCard = startColumn.cards[draggableCardInd];
-        console.log(draggableCard);
-        console.log(source.index, destination.index);
         // reordering
         if (startColumn === finishColumn) {
             const newCards = Array.from(startColumn.cards);
@@ -56,10 +53,8 @@ export class Dashboard extends Component {
             };
             let prevState = { ...this.state }
             this.setState(newState);
-            console.log(finishColumn);
             updateCardPosition(draggableCard.id, source.index, destination.index, finishColumn.id)
                 .then((response) => {
-                    console.log(response);
                     if (response.status !== 200) {
                         alert("Error");
                         this.setState(prevState);
@@ -69,7 +64,6 @@ export class Dashboard extends Component {
         }
         // moving to the other column
         else {
-            console.log("MOVING TO OTHER COLUMN");
             const startCards = Array.from(startColumn.cards);
             startCards.splice(source.index, 1);
             const newStart = {
@@ -85,7 +79,6 @@ export class Dashboard extends Component {
             let newColumns = Array.from(this.state.columns);
             newColumns.splice(startColumnInd, 1, newStart);
             newColumns.splice(finishColumnInd, 1, newFinish);
-            console.log(newColumns);
             const newState = {
                 ...this.state,
                 columns: newColumns
@@ -95,7 +88,6 @@ export class Dashboard extends Component {
 
             updateCardPosition(draggableCard.id, source.index, destination.index, finishColumn.id)
                 .then((response) => {
-                    console.log(response);
                     if (response.status !== 200) {
                         alert("Error");
                         this.setState(prevState);
@@ -107,10 +99,8 @@ export class Dashboard extends Component {
     componentDidMount() {
         const { dashboardId } = this.props.params;
         this.dashboardId = dashboardId;
-        console.log(dashboardId);
         getDashboardDetails(dashboardId).then(response => {
             this.setState(response.result);
-            console.log(response.result);
 
 
             this.connection = new HubConnectionBuilder()
@@ -134,38 +124,30 @@ export class Dashboard extends Component {
 
 
 
-            this.connection.on('ReceiveMessage', _ => {
-                console.log("Yahoo");
+            this.connection.on('ReceiveMessage', message => {
+                console.log(`Recieved message:${message}`)
                 getDashboardDetails(dashboardId).then(response => {
                     this.setState(response.result);
-                    console.log(response.result);
                 });;
             });
 
         });
     }
     componentWillUnmount() {
-        console.log("unmount");
         this.connection.stop();
     }
     addCardHook = (content, columnId) => {
         createCard(content, columnId).then((response) => {
-            console.log(response);
             if (response.status === 200) {
-                console.log(response.result)
                 let colInd = this.state.columns.findIndex((column) => column.id === columnId);
-                console.log(colInd);
                 let newColumnsState = Array.from(this.state.columns);
-                console.log(newColumnsState);
                 newColumnsState[colInd].cards.push(response.result);
-                console.log(newColumnsState);
                 this.setState({ ...this.state, columns: newColumnsState })
             }
         })
     }
     deleteCardHook = (cardId) => {
         deleteCard(cardId).then((response) => {
-            console.log(response);
             if (response.status === 200) {
                 let newColumns = Array.from(this.state.columns);
                 for (let i = 0; i < newColumns.length; i++) {
@@ -178,7 +160,6 @@ export class Dashboard extends Component {
     addColumnHook = (dashboardId, listName) => {
 
         addColumn(dashboardId, listName).then((response) => {
-            console.log(response);
             if (response.status === 200) {
                 const column = response.result;
                 let newColumns = Array.from(this.state.columns);
@@ -201,19 +182,15 @@ export class Dashboard extends Component {
     }
     renameColumnHook = (name, id) => {
         updateColumnInfo(id, name).then((response) => {
-            console.log(response)
             if (response.status === 200) {
                 let newColumns = Array.from(this.state.columns);
                 newColumns = newColumns.map(column => {
                     if (column.id === id) column.name = name
                     return column;
                 })
-                console.log(newColumns);
                 this.setState({ ...this.state, columns: newColumns });
-                console.log(this.state);
             }
         })
-        console.log(this.state);
     }
     changeBackgroundHook = (backgroundName) => {
         updateDashboardBackground(this.state.id, backgroundName).then((response) => {
@@ -224,7 +201,6 @@ export class Dashboard extends Component {
     }
     removeUserHook = (userToRemoveId) => {
         removeUserFromDashboard(this.state.id, userToRemoveId).then(response => {
-            console.log(response);
             if (response.status === 200) {
                 this.setState({ ...this.state, memberships: response.result });
             }
@@ -232,7 +208,6 @@ export class Dashboard extends Component {
     }
     addUserHook = (email, role) => {
         addUserToDashBoard(this.state.id, email, role).then(response => {
-            console.log(response);
             if (response.status === 200) {
                 this.setState({ ...this.state, memberships: response.result });
             }
@@ -247,7 +222,6 @@ export class Dashboard extends Component {
     }
     changeDashboardNameHook = (name) => {
         updateDashboardName(this.state.id, name).then(response => {
-            console.log(response);
             if (response.status === 200) {
                 this.setState({ ...this.state, name });
             }
@@ -260,7 +234,7 @@ export class Dashboard extends Component {
         const disabled = this.state.role === 2;
         return (
             <>
-                <div class="dashboard-container" style={{ backgroundImage: `url(${backgroundImg})` }}>
+                <div className="dashboard-container" style={{ backgroundImage: `url(${backgroundImg})` }}>
                     <DashboardTopMenu name={this.state.name}
                         memberships={this.state.memberships}
                         changeBackgroundHook={this.changeBackgroundHook}
@@ -268,7 +242,7 @@ export class Dashboard extends Component {
                         addUserHook={this.addUserHook}
                         removeUserHook={this.removeUserHook}
                         role={this.state.role} />
-                    <div class="cards-table">
+                    <div className="cards-table">
                         <DragDropContext onDragEnd={this.onDragEnd} >
                             {this.state.columns.map((column, columnId) => {
                                 const cards = column.cards;

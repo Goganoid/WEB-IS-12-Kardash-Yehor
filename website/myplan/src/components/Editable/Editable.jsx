@@ -10,9 +10,8 @@ export const Editable = (props) => {
     const handleColumnNameChange = (e)=>setValue(e.target.value);
 
     const changeValueOnEnter = (e)=>{
-        if(e.keyCode == 13){
-            console.log(e);
-            if(e.target.value.length==0){
+        if(e.keyCode === 13){
+            if(e.target.value.length===0){
                 alert("Column title can't be empty");
                 return;
             }

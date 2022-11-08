@@ -5,7 +5,7 @@ import {setUserData} from '../../middleware/storage';
 
 import './Auth.css'
 
-function Login({apiClient}) {
+function Login() {
 
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
@@ -13,12 +13,10 @@ function Login({apiClient}) {
     let handleSumbit = async e => {
         e.preventDefault();
         let response = await login(email, password);
-        console.log(response);
         if (response.status !== 200) {
             setInvalidLogin(true);
         } else {
             setInvalidLogin(false);
-            console.log(response);
             setUserData({token: response.result.token, userId: response.result.id});
             window.location.href = "/";
         }
