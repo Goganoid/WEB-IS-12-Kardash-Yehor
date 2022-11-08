@@ -3,7 +3,8 @@ import './Column.css'
 import { Card } from '../card/Card'
 import { Droppable } from 'react-beautiful-dnd'
 import { useState } from 'react'
-export const Column = ({column,cards,addCard,deleteCardHook,renameColumnHook,deleteColumnHook}) => {
+import { Editable } from '../Editable/Editable'
+export const Column = ({column,cards,addCard,deleteCardHook,renameColumnHook,deleteColumnHook,disabled}) => {
 
     const addCardOnEnter = (e)=>{
         if(e.keyCode == 13){
@@ -46,7 +47,7 @@ export const Column = ({column,cards,addCard,deleteCardHook,renameColumnHook,del
             <div class="list-header">
 
                 <div class="list-name">
-                    {
+                    {/* {
                         showNameInput ? 
                         <input type="text" value={columnName} 
                         onChange={handleColumnNameChange}
@@ -56,11 +57,26 @@ export const Column = ({column,cards,addCard,deleteCardHook,renameColumnHook,del
                         />
                         :
                         <span onClick={toggleShowNameInput}>{columnName}</span>
-                    }
+                    } */}
+                    <Editable hook={(name)=>{
+                        renameColumnHook(name,column.id);
+                        setColumnName(name);
+                    }}
+                    disabled={disabled}
+                    >
+                        <span>{columnName}</span>
+                    </Editable>
                     </div>
-                <div class="list-menu-button" onClick={deleteColumn}>
-                <i class="fa-regular fa-circle-xmark"></i>
-                </div>
+                    {
+                        !disabled
+                        ?
+                        <div class="list-menu-button" onClick={deleteColumn}>
+                        <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                        :
+                        null
+                    }
+               
                 
             </div>
             <Droppable droppableId={column.id.toString()}>
@@ -70,17 +86,24 @@ export const Column = ({column,cards,addCard,deleteCardHook,renameColumnHook,del
                 {...provided.droppableProps}
                 >
                     {cards.map((card,index)=>
-                    <Card card={card} key={card.id} index={index} deleteCardHook={deleteCardHook}></Card>
+                    <Card card={card} key={card.id} index={index} deleteCardHook={deleteCardHook} disabled={disabled}></Card>
                     )}
                     {provided.placeholder}
                 </div>
                 }
             </Droppable>
-            <div class="add-control">
-                <input class="new-card-input fade-hover" type="text" placeholder=" + Add new card"
-                   onKeyDown={addCardOnEnter}
-                />
-            </div>
+            {
+                !disabled
+                ?
+                <div class="add-control">
+                    <input class="new-card-input fade-hover" type="text" placeholder=" + Add new card"
+                    onKeyDown={addCardOnEnter}
+                    />
+                </div>
+                :
+                null
+            }
+            
     </div>
     
     </>

@@ -56,6 +56,31 @@ export function addColumn(dashboardId,name){
         }
     });
 }
+
+export function addUserToDashBoard(dashboardId,email,role){
+    return apiClient.post(`Dashboard/join/${dashboardId}`,{email,role},
+    {
+        headers: {
+            'Authorization': `bearer ${token}`, 'Content-Type': 'application/json'
+        }
+    });
+}
+export function updateDashboardName(dashboardId,name){
+    return apiClient.put(`Dashboard/update/${dashboardId}`,{name},
+    {
+        headers: {
+            'Authorization': `bearer ${token}`, 'Content-Type': 'application/json'
+        }
+    });
+}
+export function removeUserFromDashboard(dashboardId,userToRemoveId){
+    return apiClient.delete(`Dashboard/${dashboardId}/removeUser/${userToRemoveId}`,{},
+    {
+        headers: {
+            'Authorization': `bearer ${token}`, 'Content-Type': 'application/json'
+        }
+    });
+}
 export function deleteColumn(columnId){
     return apiClient.delete(`Column/delete/${columnId}`,{},
     {

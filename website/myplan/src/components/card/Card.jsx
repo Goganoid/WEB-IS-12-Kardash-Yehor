@@ -8,7 +8,7 @@ export const Card = (props) => {
     props.deleteCardHook(props.card.id);
   }
   return (
-    <Draggable draggableId={props.card.id.toString()} index={props.index}>
+    <Draggable draggableId={props.card.id.toString()} index={props.index} isDragDisabled={props.disabled}>
         {
             (provided) =>(
                 <div class="list-item" 
@@ -19,10 +19,15 @@ export const Card = (props) => {
                   <div className="list-item-content">
                     {props.card.content}
                   </div>
-                  <button className="delete-list-item" onClick={deleteListItem}
-                  >
+                  {
+                    !props.disabled
+                    ?
+                    <button className="delete-list-item" onClick={deleteListItem}>
                     <i class="fa-regular fa-circle-xmark"></i>
                   </button>
+                  :null
+                  }
+                  
                   </div>
             )
         }

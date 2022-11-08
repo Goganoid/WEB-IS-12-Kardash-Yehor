@@ -13,14 +13,7 @@ export const Header = () => {
             </div>
             <div class="buttons">
                 {
-                    isLoggedIn ?
-                    (<UserProfileMenu></UserProfileMenu>)
-                    :
-                    (<>
-                    <Link to="/register"><button class="style-button header-button">Sign Up</button></Link>
-                    <Link to="/login"><button class="style-button header-button">Login</button></Link>
-                    </>
-                    )
+                   <UserProfileMenu></UserProfileMenu>
                 }
                 
             </div>

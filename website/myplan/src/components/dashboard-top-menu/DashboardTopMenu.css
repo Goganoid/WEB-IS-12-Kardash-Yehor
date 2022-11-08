@@ -36,7 +36,53 @@
 .background-menu{
     position: relative;
 }
-.background-selector{
+
+.dashboard-user{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+}
+.dashboard-user:hover{
+    background-color: #00000010;
+}
+.remove-user-button{
+    /* position: absolute;
+    right: 0;
+    top:25%; */
+}
+.add-user-form{
+    margin-top: 10px;
+    display: flex;
+}
+.add-user-form input {
+    width: 30%;
+}
+.add-user-form select{
+    width: 35%;
+}
+.add-user-form div{
+    width: 25%;
+}
+.add-user-form div{
+    display: block;
+    box-shadow: none;
+    background-color: #0079bf;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 2px;
+    color: white;
+}
+
+.add-user-form div:hover{
+    background-color: #0079bf77;
+}
+.share{
+    width: 400px;
+}
+.selector{
     position: absolute;
     top:50px;
     display: flex;
