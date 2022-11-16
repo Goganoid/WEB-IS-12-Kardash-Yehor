@@ -1406,14 +1406,14 @@ div[class*='cube-']{
                     сортування)Надрукувати вхідний та вихідний масив.
                     Застосувати функції</p>
                 <h2>HTML</h2>
-                <pre><code>
+                <pre><code class="language-html">
                     <div id="arrays">
                         <div id="original">Original: </div>
                         <div id="sorted">Sorted: </div>
                     </div>
                 </code></pre>
                 <h2>JS</h2>
-                <pre><code>
+                <pre><code class="language-javascript">
                     function QuickSort(Arr){
                         if(Arr.length <= 1){
                           return Arr;
@@ -1454,7 +1454,7 @@ div[class*='cube-']{
                     Вимоги до компоненту: вибір числа, перехід між
                     місяцями та роками, відміна вибору дати.</p>
                 <h2>HTML</h2>
-                <pre><code>
+                <pre><code class="language-html">
                     <div id="calendar">
                         <!-- YEAR SELECTOR -->
                         <div id="year-menu" class="selector">
@@ -1511,7 +1511,7 @@ div[class*='cube-']{
                     }
                 </code></pre>
                 <h2>JS</h2>
-                <pre><code>
+                <pre><code class="language-javascript">
                     const daysOfWeek=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec"]
 
@@ -1594,6 +1594,7 @@ class Calendar{
         content+="</tr>";
         for(let row=0;row<rows;row++){
             content+="<tr>";
+                    
             for(let column=1;column<=columns;column++){
                 let day =7*(row)+column;
                 let cellContent = day<=daysInMonth ? day : '';
@@ -1655,7 +1656,7 @@ let calendar = new Calendar();
                     документі.
                 </p>
                 <h2>HTML</h2>
-                <pre><code>
+                <pre><code class="language-html">
                     <div class="cards-table">
                         <div class="list">
                             <div class="list-header">
@@ -1686,7 +1687,7 @@ let calendar = new Calendar();
                     </div>
                 </code></pre>
                 <h2>JS</h2>
-                <pre><code>
+                <pre><code class="language-javascript">
                     let addListButton = document.getElementById("add-list");
 let addListInput = document.getElementById("add-list-input");
 let listControlButtons = document.getElementById("add-list-buttons");
@@ -1795,7 +1796,7 @@ updateAddCardButtons();
             renderReport(new_report_id)
         }
         document.querySelectorAll("code").forEach(function(element) {
-        element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+         element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         });
         hljs.highlightAll();
 

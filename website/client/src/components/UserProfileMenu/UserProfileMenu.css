@@ -1,0 +1,38 @@
+.user-profile-button{
+    display: block;
+    border-radius: 50%;
+    border:1px solid;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-profile-button i{
+    display: block;
+}
+
+.user-profile-menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0px;
+    top:50px;
+    background-color: #fff;
+    z-index: 500;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    padding: 10px 5px;
+    width: 100px;
+    align-items: center;
+}
+.user-profile-menu-element:hover{
+    text-decoration: underline;
+}
+.user-profile-menu-element{
+    color:black;
+    margin: 5px 0;
+}
+.user-profile-menu-element:visited{
+    color:black;
+}

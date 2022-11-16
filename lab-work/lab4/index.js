@@ -1,3 +1,4 @@
+var count = 0;
 function QuickSort(Arr){
     if(Arr.length <= 1){
       return Arr;
@@ -10,7 +11,11 @@ function QuickSort(Arr){
     for(let i=0; i < Arr.length-1;i++){
       Arr[i] < pivot ? leftArr.push(Arr[i]) :  rightArr.push(Arr[i])
     }
-  
+    console.log("Level ",count);
+    count++;
+    console.log(pivot);
+    console.log(leftArr);
+    console.log(rightArr)
     return [...QuickSort(leftArr) ,pivot,...QuickSort(rightArr)];
   
   }
@@ -123,8 +128,10 @@ class Calendar{
         // set cell with current day by default
         if(this.month == new Date().getMonth() 
         && this.year == new Date().getFullYear()
-        && document.getElementsByClassName("selected").length==0){
-            this.daysTable.querySelector(`td[value="${this.day}"]`).classList.toggle("selected")
+        && document.getElementsByClassName("selected").length==0)
+        {
+            this.daysTable.querySelector(`td[value="${this.day}"]`).classList.toggle("selected");
+            this.completed = true;
         }
 
         // add onclick events to cells

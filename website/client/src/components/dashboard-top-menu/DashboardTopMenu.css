@@ -1,0 +1,126 @@
+.menu{
+    flex: 5 1 0;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap:20px;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+.user-profile-button{
+    position: absolute;
+    right: 1rem;
+    display: block;
+    border-radius: 50%;
+    border:1px solid;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-profile-button i{
+    display: block;
+}
+.menu button{
+    background-color: rgba(0, 0, 0, 0.158);
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+}
+.menu button:hover{
+    background-color: rgba(49, 49, 49, 0.158);
+}
+
+.background-menu{
+    position: relative;
+}
+
+.dashboard-user{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+}
+.dashboard-user:hover{
+    background-color: #00000010;
+}
+.remove-user-button{
+    /* position: absolute;
+    right: 0;
+    top:25%; */
+}
+.add-user-form{
+    margin-top: 10px;
+    display: flex;
+}
+.add-user-form input {
+    width: 30%;
+}
+.add-user-form select{
+    width: 35%;
+}
+.add-user-form div{
+    width: 25%;
+}
+.add-user-form div{
+    display: block;
+    box-shadow: none;
+    background-color: #0079bf;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 2px;
+    color: white;
+}
+
+.add-user-form div:hover{
+    background-color: #0079bf77;
+}
+.share{
+    width: 400px;
+}
+.selector{
+    position: absolute;
+    top:50px;
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    background-color: #fff;
+    z-index: 500;
+    border-radius: 10px;
+    padding: 20px 5px;
+}
+.background-selector h2{
+    border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.background-preview{
+    display: block;
+    width: 150px;
+    z-index: 500;
+}
+.background-preview-container{
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #00000060;
+  }
+  
+.background-preview-container:hover .overlay {
+opacity: 1;
+}
