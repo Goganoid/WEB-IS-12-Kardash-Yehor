@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css' />
+
+    <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="gifPlayer/gifplayer.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Accordion</h1>
+    <div id="accordion">
+        <h3>Section 1</h3>
+        <div>
+            <p>I'm section 1 text!</p>
+        </div>
+        <h3>Section 2</h3>
+        <div>
+            <p>Hello World</p>
+        </div>
+        <h3>Section 3</h3>
+        <div>
+            <p>I have a button</p>
+            <button>I'm a button!</button>
+        </div>
+    </div>
+    <h1>Slider</h1>
+    <p>
+        <label for="amount">Value:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+
+    <div id="slider"></div>
+
+    <h1>Datepicker</h1>
+    <input type="text" name="date" id="date">
+
+    <h1>Gallery</h1>
+    <!-- фотогалерея з можливістю перегляду збільшених зображень -->
+    <div id="gallery" style="display:none;">
+
+        <img alt="Image 1 Title" src="thumbs/thumb1.jpg" data-image="images/image1.jpg"
+            data-description="Image 1 Description">
+
+        <img alt="Image 2 Title" src="thumbs/thumb2.jpg" data-image="images/image2.jpg"
+            data-description="Image 2 Description">
+        <img alt="Image 3 Title" src="thumbs/thumb3.jpg" data-image="images/image3.jpg"
+            data-description="Image 3 Description">
+
+    </div>
+    <!-- слайдер фотографій -->
+    <div id="img-slider" style="display:none;">
+
+        <img alt="Image 1 Title" src="thumbs/thumb1.jpg" data-image="images/tile1.jpg"
+            data-description="Image 1 Description">
+
+        <img alt="Image 2 Title" src="thumbs/thumb2.jpg" data-image="images/tile2.jpg"
+            data-description="Image 2 Description">
+        <img alt="Image 3 Title" src="thumbs/thumb3.jpg" data-image="images/tile3.jpg"
+            data-description="Image 3 Description">
+
+    </div>
+    <!-- слайдер відеоматеріалів -->
+    <div id="video-slider" style="display:none;">
+
+        <img alt="Youtube With Images" data-type="youtube" src="thumbs/youtube_thumb.jpg"
+            data-image="images/youtube_image.jpg" data-videoid="A3PDXmYoF5U"
+            data-description="Youtube video description">
+        <img alt="Youtube With Images" data-type="youtube" src="thumbs/youtube_thumb.jpg"
+            data-image="images/youtube_image.jpg" data-videoid="q6gR3ayHKeo"
+            data-description="Youtube video description">
+        <img alt="Youtube With Images" data-type="youtube" src="thumbs/youtube_thumb.jpg"
+            data-image="images/youtube_image.jpg" data-videoid="9MgRErd6o8w"
+            data-description="Youtube video description">
+
+    </div>
+
+    </div>
+    <h1>Links</h1>
+    <div class="social">
+        <a href="https://youtube.com">
+            <img src="social/youtube.png" alt="">
+        </a>
+        <a href="https://facebook.com">
+            <img src="social/facebook.png" alt="">
+        </a>
+        <a href="https://instagram.com">
+            <img src="social/instagram.png" alt="">
+        </a>
+
+    </div>
+
+    <h1>Widgets</h1>
+    <div>
+        <!-- weather start -->
+        <div id="SinoptikInformer" style="width:240px;" class="SinoptikInformer type1c1">
+            <div class="siHeader">
+                <div class="siLh">
+                    <div class="siMh"><a onmousedown="siClickCount();" class="siLogo" href="https://ua.sinoptik.ua/"
+                            target="_blank" rel="nofollow" title="Погода"> </a>Погода <span id="siHeader"></span></div>
+                </div>
+            </div>
+            <div class="siBody"><a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-київ"
+                    title="Погода у Києві" target="_blank">
+                    <div class="siCity">
+                        <div class="siCityName"><span>Київ</span></div>
+                        <div id="siCont0" class="siBodyContent">
+                            <div class="siLeft">
+                                <div class="siTerm"></div>
+                                <div class="siT" id="siT0"></div>
+                                <div id="weatherIco0"></div>
+                            </div>
+                            <div class="siInf">
+                                <p>вологість: <span id="vl0"></span></p>
+                                <p>тиск: <span id="dav0"></span></p>
+                                <p>вітер: <span id="wind0"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <div class="siFooter">
+                <div class="siLf">
+                    <div class="siMf"></div>
+                </div>
+            </div>
+        </div>
+        <!-- weather end -->
+        <!-- minfin start -->
+        <div id="minfin-informer-m1Fn-currency">Завантажуємо <a href="https://minfin.com.ua/ua/currency/"
+                target="_blank">курси валют</a> від minfin.com.ua</a></div>
+        <script>var iframe = '<ifra' + 'me width="275" height="120" fram' + 'eborder="0" src="https://informer.minfin.com.ua/ua/gen/course/?color=yellow" vspace="0" scrolling="no" hspace="0" allowtransparency="true"style="width:275px;height:120px;ove' + 'rflow:hidden;"></iframe>'; var cl = 'minfin-informer-m1Fn-currency'; document.getElementById(cl).innerHTML = iframe; </script>
+        <!-- minfin end -->
+        <!-- clock widget start -->
+        <script
+            type="text/javascript"> var css_file = document.createElement("link"); css_file.setAttribute("rel", "stylesheet"); css_file.setAttribute("type", "text/css"); css_file.setAttribute("href", "https://s.bookcdn.com//css/cl/bw-cl-180x170r9.css?v=0.0.1"); document.getElementsByTagName("head")[0].appendChild(css_file); </script>
+        <div id="tw_19_135149281">
+            <div style="width:120px; height:140px;"><a href="https://hotelmix.com.ua/time/kyiv-18881">Київ</a><br />
+            </div>
+        </div>
+        <script
+            type="text/javascript"> function setWidgetData_135149281(data) { if (typeof (data) != 'undefined' && data.results.length > 0) { for (var i = 0; i < data.results.length; ++i) { var objMainBlock = ''; var params = data.results[i]; objMainBlock = document.getElementById('tw_' + params.widget_type + '_' + params.widget_id); if (objMainBlock !== null) objMainBlock.innerHTML = params.html_code; } } } var clock_timer_135149281 = -1; widgetSrc = "https://widgets.booked.net/time/info?ver=2;domid=966;type=19;id=135149281;scode=24526;city_id=18881;wlangid=29;mode=2;details=0;background=ffffff;border_color=ffffff;color=363636;add_background=ffffff;add_color=333333;head_color=ffffff;border=0;transparent=0"; var widgetUrl = location.href; widgetSrc += '&ref=' + widgetUrl; var wstrackId = ""; if (wstrackId) { widgetSrc += ';wstrackId=' + wstrackId + ';' } var timeBookedScript = document.createElement("script"); timeBookedScript.setAttribute("type", "text/javascript"); timeBookedScript.src = widgetSrc; document.body.appendChild(timeBookedScript); </script>
+        <!-- clock widget end -->
+
+    </div>
+
+    <img class="gif" data-gif="gif/1.gif" src="gif/1.png">
+    <img class="gif" data-gif="gif/2.gif" src="gif/2.png">
+
+
+    <script type="text/javascript" charset="UTF-8"
+        src="//sinoptik.ua/informers_js.php?title=4&amp;wind=3&amp;cities=303010783&amp;lang=ua"></script>
+    <script src="jquery-ui/external/jquery/jquery.js"></script>
+    <script src="jquery-ui/jquery-ui.js"></script>
+    <script src='unitegallery/js/unitegallery.min.js'></script>
+    <script src='unitegallery/themes/default/ug-theme-default.js'></script>
+    <script src='unitegallery/themes/slider/ug-theme-slider.js'></script>
+    <script src="gifPlayer/jquery.gifplayer.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

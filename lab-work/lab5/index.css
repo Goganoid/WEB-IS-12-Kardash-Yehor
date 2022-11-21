@@ -1,0 +1,10 @@
+.social{
+    display: flex;
+    gap:10px;
+}
+.social a img{
+    width: 25px;
+}
+#clock_body_wid9{
+    margin:0 !important;
+}
